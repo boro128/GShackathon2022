@@ -1,17 +1,31 @@
 import streamlit as st
-from tabs import logic_tech_quiz, random_questions
-from multipage import MultiPage
 from PIL import Image
-# Create an instance of the app
-app = MultiPage()
+
+
 image = Image.open('resources/logo.png')
-# Title of the main page
 st.image(image)
 st.title("Welcome to Goldman Sachs")
 
-
-app.add_page("Messages", logic_tech_quiz.app)
-app.add_page("Random question", random_questions.app)
+def show_some_buttons():
+    if st.button("asdfas"):
+        st.write("fjas")
 
 if __name__ == '__main__':
-    app.run()
+
+
+    print()
+    if st.session_state == {}:
+        st.session_state = {'curr_view': 'init', 'question': 1}
+
+    if st.session_state['curr_view'] == 'init':
+        st.write("View 0")
+        show_some_buttons()
+        if st.button("go to question"):
+            st.session_state['curr_view'] = 'questions'
+            st.experimental_rerun()
+            
+    if st.session_state['curr_view'] == 'questions':
+        st.write(f"Question {st.session_state['question']}")
+        if st.button("go to next"):
+            st.session_state['question'] += 1
+            st.experimental_rerun()
