@@ -1,6 +1,8 @@
 import streamlit as st
 from PIL import Image
 
+from tabs import submit_email_view
+
 
 image = Image.open('resources/logo.png')
 st.image(image)
@@ -19,7 +21,7 @@ def handle_init_view():
         show_some_buttons()
         if st.button("go to question"):
             st.session_state['curr_view'] = 'questions'
-            # st.experimental_rerun()
+            st.experimental_rerun()
 
 
 def handle_questions_view():
@@ -28,11 +30,14 @@ def handle_questions_view():
         st.write(f"Question {st.session_state['question']}")
         if st.button("go to next"):
             st.session_state['question'] += 1
-            # st.experimental_rerun()
+            if st.session_state['question'] == 11:
+                st.session_state['curr_view'] = 'submit_email'
+            st.experimental_rerun()
 
 
 def handle_submit_email_view():
-    pass
+    if st.session_state['curr_view'] == 'submit_email':
+        submit_email_view.run()
 
 
 def main():
