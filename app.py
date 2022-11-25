@@ -1,5 +1,5 @@
 import streamlit as st
-from pages import logic_tech_quiz, random_questions
+from tabs import logic_tech_quiz, random_questions
 from multipage import MultiPage
 from PIL import Image
 # Create an instance of the app
