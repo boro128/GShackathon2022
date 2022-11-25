@@ -22,7 +22,7 @@ def handle_init_view():
             # st.experimental_rerun()
 
 
-def handle_questions_view():
+def handle_quiz_tech_view():
     if st.session_state['curr_view'] == 'quiz_tech':
         # kod do innych plików
         st.write(f"Question {st.session_state['question']}")
@@ -40,7 +40,7 @@ def main():
         st.session_state = {'curr_view': 'init', 'question': 1}
 
     handle_init_view()
-    handle_questions_view()
+    handle_quiz_tech_view()
     handle_submit_email_view()
 
 
