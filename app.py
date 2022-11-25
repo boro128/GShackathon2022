@@ -1,11 +1,13 @@
 import streamlit as st
 from pages import logic_tech_quiz, random_questions
 from multipage import MultiPage
+from PIL import Image
 # Create an instance of the app
 app = MultiPage()
-
+image = Image.open('resources/logo.png')
 # Title of the main page
-st.title("Welcome to Goldman Sachs" + st.image())
+st.image(image)
+st.title("Welcome to Goldman Sachs")
 
 
 app.add_page("Messages", logic_tech_quiz.app)
