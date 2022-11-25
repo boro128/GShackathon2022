@@ -5,7 +5,7 @@ from multipage import MultiPage
 app = MultiPage()
 
 # Title of the main page
-st.title("Welcome to Goldman Sachs")
+st.title("Welcome to Goldman Sachs" + st.image())
 
 
 app.add_page("Messages", logic_tech_quiz.app)
