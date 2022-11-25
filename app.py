@@ -1,4 +1,5 @@
 import streamlit as st
+from tabs import random_questions
 from PIL import Image
 
 
@@ -20,6 +21,9 @@ def handle_init_view():
         if st.button("go to question"):
             st.session_state['curr_view'] = 'quiz_tech'
             # st.experimental_rerun()
+        if st.button("go to random questions"):
+            st.session_state['curr_view'] = 'random_questions'
+            st.experimental_rerun()
 
 
 def handle_quiz_tech_view():
@@ -30,7 +34,9 @@ def handle_quiz_tech_view():
             st.session_state['question'] += 1
             # st.experimental_rerun()
 
-# def handle_
+def handle_random_questions_viev():
+    if st.session_state['curr_view'] == 'random_questions':
+        random_questions.run()
 def handle_submit_email_view():
     pass
 
@@ -42,6 +48,7 @@ def main():
     handle_init_view()
     handle_quiz_tech_view()
     handle_submit_email_view()
+    handle_random_questions_viev()
 
 
 
