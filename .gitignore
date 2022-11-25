@@ -130,3 +130,6 @@ dmypy.json
 
 # pycharm
 dashboard/.idea/
+
+# secrets
+secrets.py
