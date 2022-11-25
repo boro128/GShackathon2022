@@ -18,19 +18,19 @@ def handle_init_view():
         st.write("View 0")
         show_some_buttons()
         if st.button("go to question"):
-            st.session_state['curr_view'] = 'questions'
+            st.session_state['curr_view'] = 'quiz_tech'
             # st.experimental_rerun()
 
 
 def handle_questions_view():
-    if st.session_state['curr_view'] == 'questions':
+    if st.session_state['curr_view'] == 'quiz_tech':
         # kod do innych plików
         st.write(f"Question {st.session_state['question']}")
         if st.button("go to next"):
             st.session_state['question'] += 1
             # st.experimental_rerun()
 
-
+# def handle_
 def handle_submit_email_view():
     pass
 
@@ -42,6 +42,7 @@ def main():
     handle_init_view()
     handle_questions_view()
     handle_submit_email_view()
+
 
 
 if __name__ == '__main__':
