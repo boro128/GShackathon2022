@@ -67,7 +67,7 @@ def run():
     with col2:
         st.plotly_chart(get_time_plot(load_global_times(), time))
 
-    st.write("If you would like to know more about us but you are not sure what to ask you can ask us a random question")
+    st.write("If you would like to know more about us but you are not sure what to ask you can ask us a random question!")
 
     col1, col2 = st.columns(2)
 

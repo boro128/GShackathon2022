@@ -1,18 +1,18 @@
 num_questions: 7
 questions:
   1:
-    text: "Are You interested in data analysis and data processing?"
+    text: "Are you interested in data analysis and data processing?"
     answers:
       - "Yes"
       - "No"
   2:
-    text: "Do You have any experience in machine learning?"
+    text: "Do you have any experience in machine learning?"
     answers:
       - "Yes "
       - "No "
 
   3:
-    text: "Do You want to have impact on our products development and security? "
+    text: "Do you want to have an impact on our products development and security? "
     answers:
       - "Yes"
       - "No"
@@ -23,17 +23,17 @@ questions:
       - "No "
 
   5:
-    text: "What would You prefer more: Analytics and Engineering Data and building possible models, or Taking care about our Systems and security aspects"
+    text: "What would you prefer more: Analytics, Data Engineering, and building possible models, or taking care about systems and security aspects"
     answers:
       - "Yes"
       - "No"
   6:
-    text: "Do You have any knowledge about visualizing the data or working with databases?"
+    text: "Do you have any knowledge about visualizing the data or working with databases?"
     answers:
       - "Yes "
       - "No "
   7:
-    text: "Are You familiar with any of these technologies?"
+    text: "Are you familiar with any of these technologies?"
     answers:
       - "Python"
       - "R"
@@ -42,7 +42,7 @@ questions:
       - "Snowflake"
       - "C#"
   8:
-    text: "Are You looking for our Summer Intern or You would like to work during Your academic year?"
+    text: "Are you looking for a summer internship or you would like to work during the academic year?"
     answers:
-      - "academic year"
-      - "summer intern"
+      - "Academic Year"
+      - "Summer Itern"
