@@ -22,7 +22,8 @@ def run():
         answer_list = []
         for answer in curr_question["answers"]:
             answer_list.append(st.checkbox(answer))
-        if st.button("next question"):
+        
+        if st.button("Go To Next Question"):
             st.session_state["team answers"][st.session_state['team_question']] = answer_list
             st.session_state["team_question"] += 1
             st.experimental_rerun()

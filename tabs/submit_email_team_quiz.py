@@ -22,11 +22,11 @@ def run():
 
     st.header(f"Thank you for taking this quiz.")
 
-    st.write("Jak chcesz maila, to klik")
+    st.write("If you want to learn more about open roles at Goldman Sachs submit your email.")
 
     submit_mail_form()
 
-    st.write("If you would like to know more about us but you are not sure what to ask you can ask us a random question")
+    st.write("If you would like to know more about us but you are not sure what to ask you can ask us a random question.")
 
     col1, col2 = st.columns(2)
 
