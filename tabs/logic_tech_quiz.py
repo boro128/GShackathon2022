@@ -17,12 +17,13 @@ def score_answer(given_answer, correct_answer, is_final_question=False):
     else:
         st.session_state['score'] += streak_bonus(st.session_state['streak'])
         st.session_state['longest_streak'] = max(st.session_state['longest_streak'], st.session_state['streak'])
-        st.session_state['streak'] = 0        
-        
-        
+        st.session_state['streak'] = 0
+
+
 def run():
     df = pd.read_csv("data/quiz.csv", header=0, sep=";")
-
+    df = df.sample(n=10, random_state=st.session_state['random_state'])
+    df.index = range(1, 11)
     question_idx = st.session_state['question']
     question_text = df.loc[question_idx, 'question']
     correct_answer = df.loc[question_idx, 'correct']
@@ -30,7 +31,7 @@ def run():
     st.write(f"Question {question_idx}")
     given_answer = st.radio(
         f"{question_text}",
-        options=(df.loc[st.session_state['question'], 'odp1'], 
+        options=(df.loc[st.session_state['question'], 'odp1'],
                  df.loc[st.session_state['question'], 'odp2'],
                  df.loc[st.session_state['question'], 'odp3'])
     )
@@ -42,6 +43,7 @@ def run():
 
     if st.session_state['question'] >= 10:
         if st.button("Finish Quiz"):
+            st.session_state['random_state'] += 1
             score_answer(given_answer, correct_answer, is_final_question=True)
             st.session_state['question'] = 1
             end_time = time.time()

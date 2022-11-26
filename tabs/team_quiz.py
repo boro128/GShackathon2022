@@ -24,5 +24,4 @@ def run():
     else:
         st.session_state['curr_view'] = 'submit_team_email'
         st.session_state["team_question"] = 1
-        st.session_state['random_state'] += 1
         st.experimental_rerun()
