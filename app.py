@@ -1,6 +1,6 @@
 import streamlit as st
 
-from tabs import submit_email_view, random_questions, home, logic_tech_quiz
+from tabs import submit_email_view, random_questions, home, logic_tech_quiz, team_quiz
 
 
 def handle_init_view():
