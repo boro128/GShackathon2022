@@ -1,6 +1,12 @@
 # GShackathon2022
 
-## folder structure:
+## Installing requirements:
+`pip install -r requirements.txt`
+
+## Running the app
+`streamlit run app.py`
+
+## Folder structure:
 GShackathon2022/ <br/>
 ├── tabs/ <br/>
 │   ├── home.py <br/>
