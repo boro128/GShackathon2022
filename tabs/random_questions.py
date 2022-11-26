@@ -16,3 +16,6 @@ def run():
     st.markdown(random.choice(questions))
     if st.button("generate new"):
         st.experimental_rerun()
+    if st.button("back to main page"):
+        st.session_state['curr_view'] = 'init'
+        st.experimental_rerun()
