@@ -2,15 +2,21 @@ import streamlit as st
 import pandas as pd
 
 
+def streak_bonus(streak):
+    return streak
+
+
 def score_answer(given_answer, correct_answer, is_final_question=False):
     if given_answer == correct_answer:
         st.session_state['score'] += 1
         st.session_state['streak'] += 1
-    elif given_answer != correct_answer or is_final_question:
-        st.session_state['score'] += st.session_state['streak']
-        st.session_state['streak'] = 0
-
-
+        if is_final_question:
+            st.session_state['score'] += streak_bonus(st.session_state['streak'])
+    else:
+        st.session_state['score'] += streak_bonus(st.session_state['streak'])
+        st.session_state['streak'] = 0        
+        
+        
 def run():
     df = pd.read_csv("data/quiz.csv", header=0, sep=";")
 
