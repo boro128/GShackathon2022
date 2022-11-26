@@ -23,3 +23,7 @@ def run():
     if st.button("Random Question"):
         st.session_state['curr_view'] = 'random_questions'
         st.experimental_rerun()
+
+    if st.button("back to main page"):
+        st.session_state['curr_view'] = 'init'
+        st.experimental_rerun()
