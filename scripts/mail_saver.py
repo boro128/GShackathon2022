@@ -1,6 +1,4 @@
-import streamlit as st
-
-
-def save_mail_address(path, email, final_score, time):
+def save_mail_address(email):
+    path = "data/mails.csv"
     with open(path, "a") as file:
-        file.write(f"""{email};{final_score};{time}\n""")
+        file.write(f"""{email}\n""")

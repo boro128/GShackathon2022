@@ -1,8 +1,7 @@
 import streamlit as st
-from scripts import send_email
 import pandas as pd
 import plotly.express as px
-from email_validator import validate_email, EmailNotValidError
+from tabs.utils import submit_mail_form
 
 
 def load_global_scores():
@@ -41,15 +40,6 @@ def get_time_plot(data, new_time):
     return fig
 
 
-def check_mail(email):
-    try:
-        v = validate_email(email)
-        return v["email"]
-    except EmailNotValidError as e:
-        st.error(str(e))
-        return -1
-
-
 def run():
     score = st.session_state['score']
     time = st.session_state['quiz_total_time']
@@ -68,14 +58,7 @@ def run():
 
     st.write("If you want to take part in the lottery submit your email below! The better your score the higher chance to win you have.")
 
-    email = st.text_input("Your email", placeholder="email@example.com")
-
-    if email != '':
-        email = check_mail(email)
-
-    submit_disabled = email == -1 or email == ''
-    if st.button("Submit", disabled=submit_disabled):
-        send_email(email)
+    submit_mail_form()
 
     col1, col2 = st.columns(2)
 

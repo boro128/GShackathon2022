@@ -137,3 +137,6 @@ secrets.py
 
 # notebooks
 *.ipynb
+
+# collected emails
+data/mails.csv

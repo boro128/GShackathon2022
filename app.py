@@ -1,6 +1,6 @@
 import streamlit as st
 
-from tabs import submit_email_tech_quiz, random_questions, home, logic_tech_quiz, team_quiz
+from tabs import submit_email_tech_quiz, random_questions, home, logic_tech_quiz, team_quiz, submit_email_team_quiz
 
 
 def handle_init_view():
@@ -18,14 +18,19 @@ def handle_random_questions_view():
         random_questions.run()
 
 
-def handle_submit_email_view():
-    if st.session_state['curr_view'] == 'submit_email':
+def handle_submit_tech_email_view():
+    if st.session_state['curr_view'] == 'submit_tech_email':
         submit_email_tech_quiz.run()
 
 
 def handle_team_quiz_view():
     if st.session_state['curr_view'] == 'team_quiz':
         team_quiz.run()
+
+
+def handle_submit_team_email_view():
+    if st.session_state['curr_view'] == 'submit_team_email':
+        submit_email_team_quiz.run()
 
 
 def main():
@@ -43,9 +48,10 @@ def main():
 
     handle_init_view()
     handle_quiz_tech_view()
-    handle_submit_email_view()
+    handle_submit_tech_email_view()
     handle_random_questions_view()
     handle_team_quiz_view()
+    handle_submit_team_email_view()
 
 
 if __name__ == '__main__':
