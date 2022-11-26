@@ -22,3 +22,4 @@ def submit_mail_form():
     if st.button("Submit", disabled=submit_disabled):
         save_mail_address(email)
         send_email(email)
+        st.success("Email send succesfully")
