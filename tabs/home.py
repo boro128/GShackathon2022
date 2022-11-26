@@ -8,7 +8,7 @@ def run():
     st.image(image)
     st.markdown("# Welcome to Goldman Sachs")
 
-    col1, col2, col3, col4 = st.columns(4)
+    col1, col2, col3 = st.columns(3)
     with col1:
         st.markdown("If you would like to assess your skills and take part in our contest to win the grand prize...")
         if st.button("Take Tech Quiz"):
@@ -20,17 +20,11 @@ def run():
         st.markdown(
             "If you want to see which of our teams suits you best and learn more about your potential position...")
         if st.button("Take Team Assessment Quiz"):
-            st.session_state['curr_view'] = 'bread'
+            st.session_state['curr_view'] = 'team_quiz'
             st.experimental_rerun()
 
     with col3:
         st.markdown("If you want to learn more about us but you are not sure what to ask just...")
         if st.button("Ask us a random question!"):
             st.session_state['curr_view'] = 'random_questions'
-            st.experimental_rerun()
-
-    with col4:
-        st.markdown("Quiz o chlebie")
-        if st.button("Jakim chlebem jesteś?!"):
-            st.session_state['curr_view'] = 'team_quiz'
             st.experimental_rerun()
