@@ -1,0 +1,12 @@
+num_questions: 2
+questions:
+  1:
+    text: "Chleb, czy bagietka?"
+    answers:
+      - chleb
+      - bagietka
+  2:
+    text: "Jakieś super pytanie"
+    answers:
+      - opd 1
+      - odp 2
