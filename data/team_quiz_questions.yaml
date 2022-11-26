@@ -35,14 +35,14 @@ questions:
   7:
     text: "Are You familiar with any of these technologies?"
     answers:
-      - Python
-      - R
-      - Java
-      - Hadoop
-      - Snowflake
-      - C#
+      - "Python"
+      - "R"
+      - "Java"
+      - "Hadoop"
+      - "Snowflake"
+      - "C#"
   8:
     text: "Are You looking for our Summer Intern or You would like to work during Your academic year?"
     answers:
-      - academic year
-      - summer intern
+      - "academic year"
+      - "summer intern"

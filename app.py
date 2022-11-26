@@ -44,7 +44,7 @@ def main():
                             'longest_streak': 0,
                             'team_question': 1,
                             'team answers': {},
-                            'random_state': 0,
+                            'random_state': 0
                             }
 
     handle_init_view()

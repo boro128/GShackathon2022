@@ -1,5 +1,4 @@
 import streamlit as st
-import pandas as pd
 import yaml
 
 
@@ -12,10 +11,6 @@ def load_questions(path):
 
 def run():
     questions = load_questions("data/team_quiz_questions.yaml")
-
-    if st.session_state['team_question'] == 1:
-        st.session_state["team answers"] = {}
-
     if st.session_state['team_question'] <= questions['num_questions']:
         curr_question = questions['questions'][st.session_state['team_question']]
         st.markdown(curr_question["text"])
