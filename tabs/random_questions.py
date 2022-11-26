@@ -11,7 +11,7 @@ def load_questions(path):
 
 def run():
     questions = load_questions("data/questions.txt")
-    st.markdown("## Here's a random question you can ask:")
+    st.markdown("## Here is a random question you can ask:")
     st.markdown(random.choice(questions))
 
     col1, col2 = st.columns(2)
