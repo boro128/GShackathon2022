@@ -1,11 +1,5 @@
 import streamlit as st
-from PIL import Image
-
-
-image = Image.open('resources/logo.png')
-st.image(image)
-st.title("Welcome to Goldman Sachs")
-
+from tabs import home
 
 def show_some_buttons():
     if st.button("asdfas"):
@@ -14,12 +8,7 @@ def show_some_buttons():
 
 def handle_init_view():
     if st.session_state['curr_view'] == 'init':
-        # kod do innych plików
-        st.write("View 0")
-        show_some_buttons()
-        if st.button("go to question"):
-            st.session_state['curr_view'] = 'questions'
-            # st.experimental_rerun()
+        home.run()
 
 
 def handle_questions_view():
@@ -28,7 +17,7 @@ def handle_questions_view():
         st.write(f"Question {st.session_state['question']}")
         if st.button("go to next"):
             st.session_state['question'] += 1
-            # st.experimental_rerun()
+            st.experimental_rerun()
 
 
 def handle_submit_email_view():
