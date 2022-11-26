@@ -129,7 +129,8 @@ dmypy.json
 .pyre/
 
 # pycharm
-dashboard/.idea/
+dashboard/
+.idea/
 
 # secrets
 secrets.py
