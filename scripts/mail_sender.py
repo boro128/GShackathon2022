@@ -1,11 +1,8 @@
 from redmail import outlook
-from scripts.secrets import mail_password
+from scripts.secrets import mail_password, mail_login
 
-# WYWALIĆ POTEM
-import streamlit as st
 
-# DODAĆ DO SECRETÓW
-outlook.username = "czarny-lotos@outlook.com"
+outlook.username = mail_login
 outlook.password = mail_password
 
 EMAIL_TEMPLATE = """
@@ -20,10 +17,8 @@ We encaurage you to check our <a href="https://www.goldmansachs.com/careers/stud
 
 def send_email(email: str):
 
-    # WYWALIĆ POTEM
-    if email != "czarny-lotos@outlook.com":
-        st.write("Zmieniam mail na czarny-lotos@outlook.com")
-        email = "czarny-lotos@outlook.com"
+    # DELETE THIS LATER
+    email = "czarny-lotos@outlook.com"
 
     outlook.send(
         subject="Test mail",
