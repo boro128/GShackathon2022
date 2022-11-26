@@ -10,7 +10,7 @@ def load_questions(path):
         return questions
 
 
-def app():
+def run():
     questions = load_questions("data/questions.txt")
     st.markdown("## here's a random question you can ask:")
     st.markdown(random.choice(questions))

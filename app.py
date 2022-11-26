@@ -1,4 +1,5 @@
 import streamlit as st
+from tabs import random_questions
 from PIL import Image
 
 from tabs import submit_email_view
@@ -20,12 +21,15 @@ def handle_init_view():
         st.write("View 0")
         show_some_buttons()
         if st.button("go to question"):
-            st.session_state['curr_view'] = 'questions'
+            st.session_state['curr_view'] = 'quiz_tech'
+            # st.experimental_rerun()
+        if st.button("go to random questions"):
+            st.session_state['curr_view'] = 'random_questions'
             st.experimental_rerun()
 
 
-def handle_questions_view():
-    if st.session_state['curr_view'] == 'questions':
+def handle_quiz_tech_view():
+    if st.session_state['curr_view'] == 'quiz_tech':
         # kod do innych plików
         st.write(f"Question {st.session_state['question']}")
         if st.button("go to next"):
@@ -34,7 +38,9 @@ def handle_questions_view():
                 st.session_state['curr_view'] = 'submit_email'
             st.experimental_rerun()
 
-
+def handle_random_questions_viev():
+    if st.session_state['curr_view'] == 'random_questions':
+        random_questions.run()
 def handle_submit_email_view():
     if st.session_state['curr_view'] == 'submit_email':
         submit_email_view.run()
@@ -45,8 +51,10 @@ def main():
         st.session_state = {'curr_view': 'init', 'question': 1}
 
     handle_init_view()
-    handle_questions_view()
+    handle_quiz_tech_view()
     handle_submit_email_view()
+    handle_random_questions_viev()
+
 
 
 if __name__ == '__main__':
