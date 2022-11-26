@@ -45,4 +45,5 @@ def run():
             st.session_state['curr_view'] = 'init'
             st.session_state["team answers"] = {}
             st.session_state["team_question"] = 1
+            st.session_state['random_state'] += 1
             st.experimental_rerun()
