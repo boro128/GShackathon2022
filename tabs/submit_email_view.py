@@ -1,13 +1,14 @@
 import streamlit as st
 from scripts import send_email
 
+
 def run():
     st.header("Thank you for taking this quiz")
 
     st.write("Jak chcesz wziąć udział w losowaniu, to daj mail")
 
     email = st.text_input("Your email", "email@example.com")
-    
+
     if st.button("Submit"):
         send_email(email)
 

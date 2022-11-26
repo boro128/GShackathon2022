@@ -1,14 +1,12 @@
 import streamlit as st
-from tabs import random_questions
 from PIL import Image
 
-from tabs import submit_email_view
+from tabs import submit_email_view, random_questions
 
 
 image = Image.open('resources/logo.png')
 st.image(image)
 st.title("Welcome to Goldman Sachs")
-
 
 
 def handle_init_view():
