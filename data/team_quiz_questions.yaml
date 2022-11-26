@@ -1,12 +1,48 @@
-num_questions: 2
+num_questions: 7
 questions:
   1:
-    text: "Chleb, czy bagietka?"
+    text: "Are You interested in data analysis and data processing?"
     answers:
-      - chleb
-      - bagietka
+      - Yes
+      - No
   2:
-    text: "Jakieś super pytanie"
+    text: "Do You have any experience in machine learning?"
     answers:
-      - opd 1
-      - odp 2
+      - Yes
+      - No
+
+  3:
+    text: "Do You want to have impact on our products development and security? "
+    answers:
+      - Yes
+      - No
+  4:
+    text: "Do You have any experience in DevOps (software development and IT operations)?"
+    answers:
+      - Yes
+      - No
+
+  5:
+    text: "What would You prefer more: Analytics and Engineering Data and building possible models, or Taking care about our Systems and security aspects"
+    answers:
+      - Yes
+      - No
+  6:
+    text: "Do You have any knowledge about visualizing the data or working with databases?"
+    answers:
+      - Yes
+      - No
+  7:
+    text: "Are You familiar with any of these technologies?"
+    answers:
+      - Python
+      - R
+      - Java
+      - Hadoop
+      - Snowflake
+      - C#
+  8:
+    text: "Are You looking for our Summer Intern or You would like to work during Your academic year?"
+    answers:
+      - academic year
+      - summer intern
