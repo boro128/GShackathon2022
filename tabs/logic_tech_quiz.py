@@ -9,11 +9,11 @@ def run():
         options=(df.loc[st.session_state['question'], 'odp1'], df.loc[st.session_state['question'], 'odp2'],
                  df.loc[st.session_state['question'], 'odp3'])
     )
-    if st.session_state['question'] == 11:
+    if st.session_state['question'] >= 10:
         if st.button("finish_quiz"):
             st.session_state['curr_view'] = 'submit_email'
             st.experimental_rerun()
 
-    if st.button("go to next"):
+    elif st.button("go to next"):
         st.session_state['question'] += 1
         st.experimental_rerun()
