@@ -32,6 +32,7 @@ def run():
     if st.session_state['question'] >= 10:
         if st.button("finish_quiz"):
             score_answer(given_answer, correct_answer, is_final_question=True)
+            st.session_state['question'] = 1
             st.session_state['streak'] = 0
             end_time = time.time()
             st.session_state['quiz_total_time'] = end_time - st.session_state['quiz_start_time']
