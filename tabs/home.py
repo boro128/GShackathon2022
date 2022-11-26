@@ -1,6 +1,6 @@
 import streamlit as st
+import time
 from PIL import Image
-
 
 
 def run():
@@ -14,6 +14,7 @@ def run():
         st.markdown("If you would like to assess your skills and take part in our contest to win the grand prize...")
         if st.button("Take Tech Quiz"):
             st.session_state['curr_view'] = 'quiz_tech'
+            st.session_state['quiz_start_time'] = time.time()
             st.experimental_rerun()
 
     with col2:

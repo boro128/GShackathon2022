@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import time
 
 
 def score_answer(given_answer, correct_answer, is_final_question=False):
@@ -32,6 +33,8 @@ def run():
         if st.button("finish_quiz"):
             score_answer(given_answer, correct_answer, is_final_question=True)
             st.session_state['streak'] = 0
+            end_time = time.time()
+            st.session_state['quiz_total_time'] = end_time - st.session_state['quiz_start_time']
             st.session_state['curr_view'] = 'submit_email'
             st.experimental_rerun()
 
