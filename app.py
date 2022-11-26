@@ -30,7 +30,8 @@ def main():
                             'quiz_start_time': -1,
                             'quiz_total_time': -1,
                             'score': 0,
-                            'streak': 0
+                            'streak': 0,
+                            'longest_streak': 0
                             }
 
     handle_init_view()
