@@ -21,7 +21,7 @@ def send_email(email: str):
     email = "czarny-lotos@outlook.com"
 
     outlook.send(
-        subject="Test mail",
+        subject="It was nice meeting you!",
         receivers=[email],
         html=EMAIL_TEMPLATE,
         body_images={
