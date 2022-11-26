@@ -1,8 +1,7 @@
 import streamlit as st
-from scripts import send_email
 import pandas as pd
 import plotly.express as px
-from email_validator import validate_email, EmailNotValidError
+from tabs.utils import submit_mail_form
 
 
 def load_global_scores():
@@ -17,7 +16,8 @@ def load_global_times():
 
 def get_score_plot(data, new_score):
     color_discrete_sequence = ['#6b96c3']
-    fig = px.bar(data, x='score', y='count', color_discrete_sequence=color_discrete_sequence)
+    fig = px.bar(data, x='score', y='count',
+                 color_discrete_sequence=color_discrete_sequence)
     fig.update_layout(
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
@@ -26,9 +26,11 @@ def get_score_plot(data, new_score):
     fig.add_vline(x=new_score, line_color="#c38d6b")
     return fig
 
+
 def get_time_plot(data, new_time):
     color_discrete_sequence = ['#6b96c3']
-    fig = px.bar(data, x='time', y='count', color_discrete_sequence=color_discrete_sequence)
+    fig = px.bar(data, x='time', y='count',
+                 color_discrete_sequence=color_discrete_sequence)
     fig.update_layout(
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
@@ -36,15 +38,6 @@ def get_time_plot(data, new_time):
     fig.update_traces(width=10)
     fig.add_vline(x=new_time, line_color="#c38d6b")
     return fig
-
-
-def check_mail(email):
-    try:
-        v = validate_email(email)
-        return v["email"]
-    except EmailNotValidError as e:
-        st.error(str(e))
-        return -1
 
 
 def run():
@@ -65,14 +58,7 @@ def run():
 
     st.write("If you want to take part in the lottery submit your email below! The better your score the higher chance to win you have.")
 
-    example_mail = "email@example.com"
-    email = st.text_input("Your email", example_mail)
-    if email != example_mail:
-        email = check_mail(email)
-
-    submit_disabled = email == -1 or email == example_mail
-    if st.button("Submit", disabled=submit_disabled):
-        send_email(email)
+    submit_mail_form()
 
     col1, col2 = st.columns(2)
 

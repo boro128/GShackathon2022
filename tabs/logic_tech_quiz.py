@@ -46,7 +46,7 @@ def run():
             st.session_state['question'] = 1
             end_time = time.time()
             st.session_state['quiz_total_time'] = end_time - st.session_state['quiz_start_time']
-            st.session_state['curr_view'] = 'submit_email'
+            st.session_state['curr_view'] = 'submit_tech_email'
             st.experimental_rerun()
 
     elif st.button("Go To Next Question"):
