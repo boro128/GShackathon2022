@@ -3,7 +3,7 @@ from scripts import send_email
 
 
 def run():
-    st.header("Thank you for taking this quiz")
+    st.header(f"Thank you for taking this quiz. Your score is: {st.session_state['score']}")
 
     time = st.session_state['quiz_total_time']
     minutes = int(time // 60)
