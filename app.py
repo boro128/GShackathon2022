@@ -25,7 +25,7 @@ def handle_submit_email_view():
 
 def main():
     if st.session_state == {}:
-        st.session_state = {'curr_view': 'init', 'question': 1}
+        st.session_state = {'curr_view': 'init', 'question': 1, 'score': 0, 'streak': 0}
 
     handle_init_view()
     handle_quiz_tech_view()
