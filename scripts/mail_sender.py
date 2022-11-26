@@ -17,9 +17,6 @@ We encaurage you to check our <a href="https://www.goldmansachs.com/careers/stud
 
 def send_email(email: str):
 
-    # DELETE THIS LATER
-    email = "czarny-lotos@outlook.com"
-
     outlook.send(
         subject="It was nice meeting you!",
         receivers=[email],
