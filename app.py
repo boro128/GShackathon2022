@@ -1,9 +1,7 @@
 import streamlit as st
-from tabs import home
+from PIL import Image
 
-def show_some_buttons():
-    if st.button("asdfas"):
-        st.write("fjas")
+from tabs import submit_email_view, random_questions, home
 
 
 def handle_init_view():
@@ -11,17 +9,25 @@ def handle_init_view():
         home.run()
 
 
-def handle_questions_view():
-    if st.session_state['curr_view'] == 'questions':
+def handle_quiz_tech_view():
+    if st.session_state['curr_view'] == 'quiz_tech':
         # kod do innych plików
         st.write(f"Question {st.session_state['question']}")
         if st.button("go to next"):
             st.session_state['question'] += 1
+            if st.session_state['question'] == 11:
+                st.session_state['curr_view'] = 'submit_email'
             st.experimental_rerun()
 
 
+def handle_random_questions_viev():
+    if st.session_state['curr_view'] == 'random_questions':
+        random_questions.run()
+
+
 def handle_submit_email_view():
-    pass
+    if st.session_state['curr_view'] == 'submit_email':
+        submit_email_view.run()
 
 
 def main():
@@ -29,8 +35,9 @@ def main():
         st.session_state = {'curr_view': 'init', 'question': 1}
 
     handle_init_view()
-    handle_questions_view()
+    handle_quiz_tech_view()
     handle_submit_email_view()
+    handle_random_questions_viev()
 
 
 if __name__ == '__main__':
