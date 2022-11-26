@@ -134,3 +134,6 @@ dashboard/
 
 # secrets
 secrets.py
+
+# notebooks
+*.ipynb

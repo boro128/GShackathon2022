@@ -10,7 +10,7 @@ def run():
     minutes = int(time // 60)
     seconds = int(time % 60)
 
-    final_score = round(score / max(seconds, 10) * 50, 2)
+    final_score = round(score / max(seconds, 10) * 10, 2)
 
     st.header(f"Thank you for taking this quiz. Your final score is: {final_score}")
     st.write(f"Your longest streak was {longest_streak}")
