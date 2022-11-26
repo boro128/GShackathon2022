@@ -27,8 +27,9 @@ def run():
     question_text = df.loc[question_idx, 'question']
     correct_answer = df.loc[question_idx, 'correct']
 
+    st.write(f"Quesiton {question_idx}")
     given_answer = st.radio(
-        f"Question no. {question_idx}\n{question_text}",
+        f"{question_text}",
         options=(df.loc[st.session_state['question'], 'odp1'], 
                  df.loc[st.session_state['question'], 'odp2'],
                  df.loc[st.session_state['question'], 'odp3'])

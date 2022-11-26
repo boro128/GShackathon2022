@@ -4,7 +4,7 @@ The number that follows the series: 2, 11, 38, ;65;119;37;119
 What does SOLID rules not refer to;Single responsibility principle,;Liskov substitution principle;multi responsibility principle;multi responsibility principle
 Brick wieights 1 kg and a half of the brick. How heavy is this brick;1 kg;2 kg;3 kg;2 kg
 The price of a hen is PLN 10. The spider was valued at  40 PLN, and the bee at 30 PLN. What will be the price of the dog according to these valuation rules?;20 zl;40 zl;60 zl;20 zl
-Zofia has 5 daughters, and each of them has a brother. Can you count how many children are in this family?Zofia has 5 daughters, and each of them has a brother. Can you count how many children are in this family?;6;10;11;6
+Zofia has 5 daughters, and each of them has a brother. Can you count how many children are in this family?;6;10;11;6
 Anna has 6 siblings. Each of the children was born 2 years apart. The youngest is Julia, who is 7 years old. How old is the eldest sibling - Ania?;19;21;23;19
 Max at work was supposed to write numbers on the plates of houses from Kwiatowa Street. He has to prepare the numbers from 1 to 100. How many times will he write the number 8?;20;18;21;20
 1 = 5, 2 = 3, 3 = 4, 4 = 6, 5 = 4, 6 = 5, 7 = 6, 8 = 5, 9 =_ Can You end this expression?;3;6;8;8
