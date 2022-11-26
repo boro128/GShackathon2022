@@ -8,8 +8,8 @@ questions:
   2:
     text: "Do You have any experience in machine learning?"
     answers:
-      - "Yes"
-      - "No"
+      - "Yes "
+      - "No "
 
   3:
     text: "Do You want to have impact on our products development and security? "
@@ -19,8 +19,8 @@ questions:
   4:
     text: "Do You have any experience in DevOps (software development and IT operations)?"
     answers:
-      - "Yes"
-      - "No"
+      - "Yes "
+      - "No "
 
   5:
     text: "What would You prefer more: Analytics and Engineering Data and building possible models, or Taking care about our Systems and security aspects"
@@ -30,19 +30,19 @@ questions:
   6:
     text: "Do You have any knowledge about visualizing the data or working with databases?"
     answers:
-      - "Yes"
-      - "No"
+      - "Yes "
+      - "No "
   7:
     text: "Are You familiar with any of these technologies?"
     answers:
-      - Python
-      - R
-      - Java
-      - Hadoop
-      - Snowflake
-      - C#
+      - "Python"
+      - "R"
+      - "Java"
+      - "Hadoop"
+      - "Snowflake"
+      - "C#"
   8:
     text: "Are You looking for our Summer Intern or You would like to work during Your academic year?"
     answers:
-      - academic year
-      - summer intern
+      - "academic year"
+      - "summer intern"
