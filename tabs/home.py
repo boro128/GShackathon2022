@@ -13,7 +13,7 @@ def run():
     with col1:
         st.markdown("If you would like to assess your skills and take part in our contest to win the grand prize...")
         if st.button("Take Tech Quiz"):
-            st.session_state['curr_view'] = 'questions'
+            st.session_state['curr_view'] = 'quiz_tech'
             st.experimental_rerun()
 
     with col2:
@@ -25,6 +25,6 @@ def run():
     with col3:
         st.markdown("If you want to learn more about us but you are not sure what to ask just...")
         if st.button("Ask us a random question!"):
-            st.session_state['curr_view'] = 'random'
+            st.session_state['curr_view'] = 'random_questions'
             st.experimental_rerun()
     
