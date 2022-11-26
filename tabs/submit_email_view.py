@@ -3,7 +3,7 @@ from scripts import send_email
 
 
 def run():
-    st.header("Thank you for taking this quiz")
+    st.header(f"Thank you for taking this quiz. Your score is: {st.session_state['score']}")
 
     st.write("Jak chcesz wziąć udział w losowaniu, to daj mail")
 
