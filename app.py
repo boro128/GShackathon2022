@@ -1,6 +1,6 @@
 import streamlit as st
 
-from tabs import submit_email_view, random_questions, home, logic_tech_quiz, team_quiz
+from tabs import submit_email_view, random_questions, home, logic_tech_quiz
 
 
 def handle_init_view():
@@ -36,6 +36,7 @@ def main():
                             'quiz_total_time': -1,
                             'score': 0,
                             'streak': 0,
+                            'longest_streak': 0,
                             'team_question': 1,
                             'team answers': {}
                             }

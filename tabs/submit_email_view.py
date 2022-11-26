@@ -3,15 +3,20 @@ from scripts import send_email
 
 
 def run():
-    st.header(f"Thank you for taking this quiz. Your score is: {st.session_state['score']}")
-
+    score = st.session_state['score']
     time = st.session_state['quiz_total_time']
+    longest_streak = st.session_state['longest_streak']
+    
     minutes = int(time // 60)
     seconds = int(time % 60)
 
+    final_score = round(score / max(seconds, 10) * 50, 2)
+
+    st.header(f"Thank you for taking this quiz. Your final score is: {final_score}")
+    st.write(f"Your longest streak was {longest_streak}")
     st.write(f"The quiz took you {minutes} {'minutes' if minutes != 1 else 'minute'} and {seconds} {'seconds' if seconds != 1 else 'second'}")
 
-    st.write("Jak chcesz wziąć udział w losowaniu, to daj mail")
+    st.write("If you want to take part in the lottery submit your email below! The better your score the higher chance to win you have.")
 
     email = st.text_input("Your email", "email@example.com")
 
