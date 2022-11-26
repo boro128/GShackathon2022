@@ -12,10 +12,16 @@ def load_questions(path):
 
 def run():
     questions = load_questions("data/questions.txt")
-    st.markdown("## here's a random question you can ask:")
+    st.markdown("## Here's a random question you can ask:")
     st.markdown(random.choice(questions))
-    if st.button("generate new"):
-        st.experimental_rerun()
-    if st.button("back to main page"):
-        st.session_state['curr_view'] = 'init'
-        st.experimental_rerun()
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        if st.button("Generate New"):
+            st.experimental_rerun()
+
+    with col2:
+        if st.button("Home Page"):
+            st.session_state['curr_view'] = 'init'
+            st.experimental_rerun()
