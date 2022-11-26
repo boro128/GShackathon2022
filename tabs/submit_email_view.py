@@ -8,3 +8,6 @@ def run():
     
     if st.button("Submit"):
         send_email(email)
+
+    if st.button("Random Question"):
+        st.session_state['curr_view'] = 'random_questions'
