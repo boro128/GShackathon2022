@@ -17,7 +17,8 @@ def load_global_times():
 
 def get_score_plot(data, new_score):
     color_discrete_sequence = ['#6b96c3']
-    fig = px.bar(data, x='score', y='count', color_discrete_sequence=color_discrete_sequence)
+    fig = px.bar(data, x='score', y='count',
+                 color_discrete_sequence=color_discrete_sequence)
     fig.update_layout(
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
@@ -26,9 +27,11 @@ def get_score_plot(data, new_score):
     fig.add_vline(x=new_score, line_color="#c38d6b")
     return fig
 
+
 def get_time_plot(data, new_time):
     color_discrete_sequence = ['#6b96c3']
-    fig = px.bar(data, x='time', y='count', color_discrete_sequence=color_discrete_sequence)
+    fig = px.bar(data, x='time', y='count',
+                 color_discrete_sequence=color_discrete_sequence)
     fig.update_layout(
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
@@ -65,12 +68,12 @@ def run():
 
     st.write("If you want to take part in the lottery submit your email below! The better your score the higher chance to win you have.")
 
-    example_mail = "email@example.com"
-    email = st.text_input("Your email", example_mail)
-    if email != example_mail:
+    email = st.text_input("Your email", placeholder="email@example.com")
+
+    if email != '':
         email = check_mail(email)
 
-    submit_disabled = email == -1 or email == example_mail
+    submit_disabled = email == -1 or email == ''
     if st.button("Submit", disabled=submit_disabled):
         send_email(email)
 
