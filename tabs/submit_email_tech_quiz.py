@@ -15,23 +15,26 @@ def load_global_times():
     return data
 
 
-def get_score_plot(data):
-    fig = px.bar(data, x='score', y='count')
+def get_score_plot(data, new_score):
+    color_discrete_sequence = ['#6b96c3']
+    fig = px.bar(data, x='score', y='count', color_discrete_sequence=color_discrete_sequence)
     fig.update_layout(
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
         margin=dict(l=20, r=20, t=100, b=100))
     fig.update_traces(width=2)
+    fig.add_vline(x=new_score, line_color="#c38d6b")
     return fig
 
-
-def get_time_plot(data):
-    fig = px.bar(data, x='time', y='count')
+def get_time_plot(data, new_time):
+    color_discrete_sequence = ['#6b96c3']
+    fig = px.bar(data, x='time', y='count', color_discrete_sequence=color_discrete_sequence)
     fig.update_layout(
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
         margin=dict(l=20, r=20, t=100, b=100))
     fig.update_traces(width=10)
+    fig.add_vline(x=new_time, line_color="#c38d6b")
     return fig
 
 
@@ -74,16 +77,20 @@ def run():
     col1, col2 = st.columns(2)
 
     with col1:
-        st.plotly_chart(get_score_plot(load_global_scores()))
+        st.plotly_chart(get_score_plot(load_global_scores(), final_score))
     with col2:
-        st.plotly_chart(get_time_plot(load_global_times()))
+        st.plotly_chart(get_time_plot(load_global_times(), time))
 
-    st.write("Chcesz z nami pogadać, a nie masz pomysłu jak zacząć, wylosuj pytanie")
+    st.write("If you would like to know more about us but you are not sure what to ask you can ask us a random question")
 
-    if st.button("Random Question"):
-        st.session_state['curr_view'] = 'random_questions'
-        st.experimental_rerun()
+    col1, col2 = st.columns(2)
 
-    if st.button("back to main page"):
-        st.session_state['curr_view'] = 'init'
-        st.experimental_rerun()
+    with col1:
+        if st.button("Random Question"):
+            st.session_state['curr_view'] = 'random_questions'
+            st.experimental_rerun()
+
+    with col2:
+        if st.button("Home Page"):
+            st.session_state['curr_view'] = 'init'
+            st.experimental_rerun()
