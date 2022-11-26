@@ -1,6 +1,6 @@
 import streamlit as st
 from email_validator import validate_email, EmailNotValidError
-from scripts import send_email
+from scripts import send_email, save_mail_address
 
 
 def check_mail(email):
@@ -20,4 +20,5 @@ def submit_mail_form():
 
     submit_disabled = email == -1 or email == ''
     if st.button("Submit", disabled=submit_disabled):
+        save_mail_address(email)
         send_email(email)
